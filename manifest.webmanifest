@@ -1,0 +1,16 @@
+{
+  "name": "Cartes terrain – Corridor appalachien",
+  "short_name": "Cartes terrain",
+  "description": "Navigation GPS sur des cartes PDF géoréférencées, hors ligne.",
+  "lang": "fr-CA",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#1f5d2b",
+  "icons": [
+    { "src": "icones/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icones/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,76 @@
+:root {
+  --vert-fonce: #1f5d2b;
+  --vert: #6aa333;
+  --gris: #5b6159;
+  --fond: #f4f6f2;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; font-family: system-ui, Roboto, sans-serif; color: #1d231c; background: var(--fond); }
+[hidden] { display: none !important; }
+button { font: inherit; cursor: pointer; }
+
+/* ---------- Accueil ---------- */
+#accueil { min-height: 100%; display: flex; flex-direction: column; }
+.entete { background: #fff; text-align: center; padding: 20px 16px 12px; border-bottom: 3px solid var(--vert); }
+.logo { width: 180px; max-width: 60%; }
+.entete h1 { margin: 6px 0 0; font-size: 1.3rem; color: var(--vert-fonce); }
+main { flex: 1; padding: 16px; max-width: 640px; width: 100%; margin: 0 auto; }
+.bouton-principal {
+  display: block; text-align: center; padding: 14px; border-radius: 10px;
+  background: var(--vert-fonce); color: #fff; font-weight: 600; font-size: 1.05rem;
+}
+.bouton-principal:active { background: var(--vert); }
+.message { background: #fff4d6; border-radius: 8px; padding: 10px; font-size: .95rem; }
+.liste { list-style: none; padding: 0; margin: 16px 0; }
+.liste li { display: flex; background: #fff; border-radius: 10px; margin-bottom: 8px; box-shadow: 0 1px 3px #0002; overflow: hidden; }
+.ouvrir { flex: 1; text-align: left; border: 0; background: none; padding: 12px 14px; }
+.ouvrir .nom { display: block; font-weight: 600; word-break: break-word; }
+.ouvrir .details { display: block; font-size: .85rem; color: var(--gris); margin-top: 2px; }
+.supprimer { border: 0; background: none; color: var(--gris); padding: 0 16px; font-size: 1.1rem; }
+.vide { color: var(--gris); text-align: center; margin-top: 24px; }
+.reglages { margin-top: 24px; color: var(--gris); }
+.reglages label { display: block; margin-top: 8px; }
+.reglages input { display: block; margin-top: 4px; padding: 6px; width: 8em; font: inherit; }
+.aide { font-size: .85rem; }
+.pied { text-align: center; font-size: .8rem; color: var(--gris); padding: 12px; }
+
+/* ---------- Carte ---------- */
+#vue-carte { position: fixed; inset: 0; }
+#carte { position: absolute; inset: 0; background: #e8ebe6; }
+.barre-haut {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; gap: 10px;
+  padding: max(8px, env(safe-area-inset-top)) 10px 8px;
+  background: #fffe; box-shadow: 0 1px 4px #0003;
+}
+#titre-carte { flex: 1; font-weight: 600; font-size: .95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.logo-mini { height: 34px; }
+.rond {
+  width: 44px; height: 44px; border-radius: 50%; border: 0; flex: none;
+  background: #fff; color: var(--vert-fonce); font-size: 1.6rem; line-height: 1;
+  box-shadow: 0 1px 4px #0004;
+}
+.recentrer { position: absolute; right: 14px; bottom: max(24px, env(safe-area-inset-bottom)); z-index: 1000; width: 54px; height: 54px; }
+.recentrer.actif { background: var(--vert-fonce); color: #fff; }
+.etat {
+  position: absolute; left: 14px; bottom: max(30px, env(safe-area-inset-bottom)); z-index: 1000;
+  max-width: calc(100% - 100px); padding: 8px 12px; border-radius: 18px;
+  background: #fff; box-shadow: 0 1px 4px #0004; font-size: .9rem;
+}
+.etat:empty { display: none; }
+.etat.ok { color: var(--vert-fonce); }
+.etat.faible { color: #9a6700; }
+.etat.hors { color: #b3261e; font-weight: 600; }
+.etat.erreur { color: #b3261e; }
+.chargement {
+  position: absolute; inset: 0; z-index: 2000; display: grid; place-items: center;
+  background: #fffc; font-weight: 600; color: var(--vert-fonce);
+}
+
+/* Position GPS */
+path.position { fill: #1a73e8; fill-opacity: 1; stroke: #fff; stroke-width: 3; stroke-opacity: 1; }
+path.precision { fill: #1a73e8; fill-opacity: .12; stroke: #1a73e8; stroke-opacity: .4; stroke-width: 1; }
+.fleche { pointer-events: none; }
+.fleche.cache { display: none; }
+.fleche .cone, .fleche svg { width: 80px; height: 80px; display: block; }
+.fleche path { fill: #1a73e8; fill-opacity: .35; }
